@@ -1,0 +1,91 @@
+package org.selenium;
+
+import java.util.concurrent.TimeUnit;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.Select;
+
+public class AdactinTask {
+
+	public static void main(String[] args) throws InterruptedException {
+		System.setProperty("webdriver.chrome.driver",
+				"C:\\Users\\dines\\eclipse-workspace\\Selenium\\Driver\\chromedriver.exe");
+		WebDriver driver = new ChromeDriver();	
+		driver.get("https://adactinhotelapp.com/");
+//Account created		//driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+		//driver.findElement(By.partialLinkText("New User Register Here")).click();
+		// driver.findElement(By.xpath("//input[@id='username']")).sendKeys("Dineshkasiraman34215");
+		// driver.findElement(By.xpath("//input[@id='password']")).sendKeys("Dineshkqwerty123");
+		// driver.findElement(By.xpath("//input[@id='re_password']")).sendKeys("Dineshkqwerty123");
+		// driver.findElement(By.xpath("//input[@id='full_name']")).sendKeys("Dineshk");
+		// driver.findElement(By.xpath("//input[@id='email_add']")).sendKeys("dineshkasiraman@gmail.com");
+		// driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+		// driver.findElement(By.xpath("//input[@id='tnc_box']")).click();
+		// driver.findElement(By.xpath("//input[@id='Submit']")).click();
+		driver.findElement(By.xpath("//input[@id='username']")).sendKeys("Dineshkasiraman34215");
+		driver.findElement(By.xpath("//input[@id='password']")).sendKeys("P07C68");
+		driver.findElement(By.xpath("//input[@id='login']")).click();
+		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+		WebElement location = driver.findElement(By.xpath("//select[@id='location']"));
+		Select sany = new Select (location);
+		sany.selectByValue("Paris");
+		WebElement hotels = driver.findElement(By.xpath("//select[@id='hotels']"));
+		Select san = new Select (hotels);
+		san.selectByValue("Hotel Sunshine");
+		WebElement hotel = driver.findElement(By.xpath("//select[@id='room_type']"));
+		Select sann = new Select (hotel);
+		sann.selectByValue("Super Deluxe");
+		WebElement hote = driver.findElement(By.xpath("//select[@id='room_nos']"));
+		Select sannn = new Select (hote);
+		sannn.selectByValue("3");
+		driver.findElement(By.xpath("//input[@id='datepick_in']")).clear();
+		driver.findElement(By.xpath("//input[@id='datepick_in']")).sendKeys("15/01/2022");
+		driver.findElement(By.xpath("//input[@id='datepick_out']")).clear();
+		driver.findElement(By.xpath("//input[@id='datepick_out']")).sendKeys("30/01/2022");
+		WebElement hot = driver.findElement(By.xpath("//select[@id='adult_room']"));
+		Select s = new Select (hot);
+		s.selectByValue("3");
+		WebElement ho = driver.findElement(By.xpath("//select[@id='child_room']"));
+		Select ss = new Select (ho);
+		ss.selectByValue("3");
+		driver.findElement(By.xpath("//input[@id='Submit']")).click();
+		driver.findElement(By.xpath("//input[@id='radiobutton_0']")).click();
+		driver.findElement(By.xpath("//input[@id='continue']")).click();
+		driver.findElement(By.xpath("//input[@id='first_name']")).sendKeys("Dinesh");
+		driver.findElement(By.xpath("//input[@id='last_name']")).sendKeys("kp");
+		driver.findElement(By.xpath("//textarea[@id='address']")).sendKeys("n0:11,nehru.kottivakkan,paris-6072202.");
+		driver.findElement(By.xpath("//input[@id='cc_num']")).sendKeys("6014235652613214");
+		WebElement h = driver.findElement(By.xpath("//select[@id='cc_type']"));
+		Select annnn = new Select (h);
+		annnn.selectByValue("VISA");
+		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+		WebElement he = driver.findElement(By.xpath("//select[@id='cc_exp_month']"));
+		Select n = new Select (he);
+		n.selectByIndex(3);
+		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+		WebElement hr = driver.findElement(By.xpath("//select[@id='cc_exp_year']"));
+		Select nnnn = new Select (hr);
+		nnnn.selectByIndex(3);
+		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+		driver.findElement(By.xpath("//input[@id='cc_cvv']")).sendKeys("197");
+		//driver.findElement(By.xpath("//input[@id='book_now']")).click();
+		WebElement mvcc = driver.findElement(By.partialLinkText("Booked Itinerary"));
+	     Actions acc = new Actions(driver);
+	     acc.moveToElement(mvcc).build().perform();
+	     acc.click().perform();
+	     WebElement mvccc = driver.findElement(By.partialLinkText("Search Hotel"));
+	     Actions accc = new Actions(driver);
+	     accc.moveToElement(mvccc).build().perform();
+	     accc.click().perform();
+	     WebElement locationn = driver.findElement(By.xpath("//select[@id='location']"));
+			Select sanyy = new Select (locationn);
+			sanyy.selectByValue("Paris");
+			WebElement hotelse = driver.findElement(By.xpath("//select[@id='hotels']"));
+			Select sanw = new Select (hotelse);
+			sanw.selectByValue("Hotel Sunshine");
+			driver.findElement(By.xpath("//input[@id='Submit']")).click();
+
+	}}
